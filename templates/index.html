@@ -21,13 +21,13 @@
           <h1><span class="blue">Salary</span> Scope</h1>
         </div>
         <div class="socials">
-          <a href="https://github.com/SpicychieF05" aria-label="GitHub" title="GitHub"><i
+          <a href="https://github.com/SpicychieF05" aria-label="GitHub" title="GitHub" target="_blank"><i
               class="fa-brands fa-github"></i></a>
-          <a href="https://www.linkedin.com/in/chirantan-mallick" aria-label="LinkedIn" title="LinkedIn"><i
-              class="fa-brands fa-linkedin"></i></a>
-          <a href="https://x.com/Chirantan2965" aria-label="X (Twitter)" title="X (Twitter)"><i
+          <a href="https://www.linkedin.com/in/chirantan-mallick" aria-label="LinkedIn" title="LinkedIn"
+            target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="https://x.com/Chirantan2965" aria-label="X (Twitter)" title="X (Twitter)" target="_blank"><i
               class="fa-brands fa-x-twitter"></i></a>
-          <a href="https://discord.gg/P4u6CttbRZ" aria-label="Discord" title="Discord"><i
+          <a href="https://discord.gg/P4u6CttbRZ" aria-label="Discord" title="Discord" target="_blank"><i
               class="fa-brands fa-discord"></i></a>
         </div>
       </header>
@@ -45,11 +45,13 @@
             <select id="gender" name="gender" required>
               <option {% if form_data.gender=='Male' %}selected{% endif %}>Male</option>
               <option {% if form_data.gender=='Female' %}selected{% endif %}>Female</option>
+              <option {% if form_data.gender=='Non-Binary' %}selected{% endif %}>Non-Binary</option>
             </select>
           </div>
           <div class="input-group">
             <label for="marital_status">Marital Status</label>
             <select id="marital_status" name="marital_status" required>
+              <option {% if form_data.marital_status=='Select' %}selected{% endif %}>Select</option>
               <option {% if form_data.marital_status=='Married' %}selected{% endif %}>Married</option>
               <option {% if form_data.marital_status=='Single' %}selected{% endif %}>Single</option>
               <option {% if form_data.marital_status=='Divorced' %}selected{% endif %}>Divorced</option>
@@ -62,7 +64,8 @@
           <div class="input-group">
             <label for="job_title">Job Title</label>
             <select id="job_title" name="job_title" required>
-              {% for job in ['Software Developer', 'Full Stack Developer', 'Frontend Developer', 'Backend Developer',
+              {% for job in ['Select your job title','Software Developer', 'Full Stack Developer', 'Frontend Developer',
+              'Backend Developer',
               'Mobile App Developer', 'QA/Test Engineer', 'Automation Tester', 'DevOps Engineer', 'Cloud Engineer',
               'Cloud Architect', 'Network Engineer', 'Network Administrator', 'System Administrator', 'IT Support
               Specialist', 'Technical Support Engineer', 'Cybersecurity Analyst', 'Security Engineer', 'Ethical Hacker',
@@ -100,6 +103,7 @@
           <div class="input-group">
             <label for="education">Highest Education</label>
             <select id="education" name="education" required>
+              <option {% if form_data.education=='Select' %}selected{% endif %}>Select</option>
               <option {% if form_data.education=='PhD' %}selected{% endif %}>PhD</option>
               <option {% if form_data.education=='Masters' %}selected{% endif %}>Masters</option>
               <option {% if form_data.education=='Bachelors' %}selected{% endif %}>Bachelors</option>
@@ -128,7 +132,8 @@
           <div class="input-group">
             <label for="city">City</label>
             <select id="city" name="city" required>
-              {% for city_name in ['Mumbai', 'Delhi', 'Bangalore', 'Hyderabad', 'Ahmedabad', 'Chennai', 'Kolkata',
+              {% for city_name in ['Select', 'Mumbai', 'Delhi', 'Bangalore', 'Hyderabad', 'Ahmedabad', 'Chennai',
+              'Kolkata',
               'Surat', 'Pune', 'Jaipur', 'Lucknow', 'Kanpur', 'Nagpur', 'Indore', 'Thane', 'Bhopal', 'Visakhapatnam',
               'Patna', 'Vadodara', 'Ludhiana', 'Agra', 'Nashik', 'Rourkela'] %}
               <option {% if form_data.city==city_name %}selected{% endif %}>{{ city_name }}</option>
@@ -138,6 +143,7 @@
           <div class="input-group">
             <label for="job_location">Location Type</label>
             <select id="job_location" name="job_location" required>
+              <option {% if form_data.job_location=='select' %}selected{% endif %}>Select</option>
               <option {% if form_data.job_location=='Urban' %}selected{% endif %}>Urban</option>
               <option {% if form_data.job_location=='Suburban' %}selected{% endif %}>Suburban</option>
               <option {% if form_data.job_location=='Rural' %}selected{% endif %}>Rural</option>
@@ -146,7 +152,7 @@
           <div class="input-group">
             <label for="nationality">Nationality</label>
             <select id="nationality" name="nationality" required>
-              {% for nation in ['Indian', 'American', 'British', 'Canadian', 'Australian', 'German', 'French',
+              {% for nation in ['Select','Indian', 'American', 'British', 'Canadian', 'Australian', 'German', 'French',
               'Japanese', 'Chinese', 'Russian', 'Brazilian', 'South African'] %}
               <option {% if form_data.nationality==nation %}selected{% endif %}>{{ nation }}</option>
               {% endfor %}
@@ -186,7 +192,8 @@
 
       <footer>
         <p>© 2025 Salary Scope. All rights reserved.</p>
-        <p>Developed by <a href="https://github.com/SpicychieF05">Chirantan Mallick</a></p>
+        <p>Developed by <a href="https://github.com/SpicychieF05" title="Linktree" target="_blank">Chirantan Mallick</a>
+        </p>
       </footer>
     </div>
   </div>
