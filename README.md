@@ -1,6 +1,6 @@
-# 📊 Salary Scope: A Data Scientist Salary Predictor
+![Salary Scope Banner](./assets/banner.jpg.jpg)
 
-![Project Banner](https://placehold.co/1200x400/1e293b/ffffff?text=Salary%20Scope&font=inter)
+# 📊 Salary Scope: A Data Scientist Salary Predictor
 
 Welcome to **Salary Scope**, a web application that predicts the salary of a data scientist based on key factors like experience level, employment type, and location. This project leverages a machine learning model trained on a comprehensive dataset to provide insightful salary estimates.
 
@@ -94,7 +94,23 @@ This project is configured for easy deployment on **Vercel**. The `vercel.json` 
 
 Here is an overview of the project's file structure:
 
-.├── api/│   └── index.py         # Main Flask application file for local and Vercel execution├── static/              # Contains static assets (CSS, JS, images)├── templates/           # Contains HTML templates for the web interface├── .gitignore           # Specifies files for Git to ignore├── label_encoder.joblib # Saved label encoder for categorical features├── model.joblib         # The trained Random Forest Regressor model├── model_performance.joblib # (Optional) Saved model performance metrics├── requirements.txt     # A list of all Python dependencies├── train_model.py       # Python script to train the ML model└── vercel.json          # Configuration file for Vercel deployment
+
+.
+├── api/
+│   └── index.py         # Main Flask application file for local and Vercel execution
+├── assets/              # Contains static images like the banner
+│   └── banner.jpg
+├── static/              # Contains static assets (CSS, JS, images)
+├── templates/           # Contains HTML templates for the web interface
+├── .gitignore           # Specifies files for Git to ignore
+├── label_encoder.joblib # Saved label encoder for categorical features
+├── model.joblib         # The trained Random Forest Regressor model
+├── model_performance.joblib # (Optional) Saved model performance metrics
+├── requirements.txt     # A list of all Python dependencies
+├── train_model.py       # Python script to train the ML model
+└── vercel.json          # Configuration file for Vercel deployment
+
+
 ---
 
 ## 📈 Model Performance
