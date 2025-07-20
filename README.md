@@ -1,4 +1,4 @@
-![Salary Scope Banner](./assets/banner.jpg)
+![Salary Scope Banner](./assets/banner.jpg.jpg)
 
 # 📊 Salary Scope: A Data Scientist Salary Predictor
 
