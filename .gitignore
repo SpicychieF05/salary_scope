@@ -1,0 +1,23 @@
+# Python virtual environment
+venv/
+/venv
+/.venv
+env/
+/env
+/.env
+
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# IDE-specific files
+.vscode/
+.idea/
+
+# Dataset file (optional, good practice if it's large)
+*.csv
+*.xlsx
+
+# Other
+.DS_Store

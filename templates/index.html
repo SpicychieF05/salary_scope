@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SalaryScope.dev</title>
+  <!-- Font Awesome CDN for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+
+<body>
+  <!-- Wrapper for the glowing border effect -->
+  <div class="glow-container">
+    <div class="main-container">
+      <header>
+        <div class="logo-title">
+          <img src="{{ url_for('static', filename='app-logo-removebg-preview.png') }}" alt="Salary Scope Logo"
+            class="logo" />
+          <h1><span class="blue">Salary</span> Scope</h1>
+        </div>
+        <div class="socials">
+          <a href="https://github.com/SpicychieF05" aria-label="GitHub" title="GitHub"><i
+              class="fa-brands fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/chirantan-mallick" aria-label="LinkedIn" title="LinkedIn"><i
+              class="fa-brands fa-linkedin"></i></a>
+          <a href="https://x.com/Chirantan2965" aria-label="X (Twitter)" title="X (Twitter)"><i
+              class="fa-brands fa-x-twitter"></i></a>
+          <a href="https://discord.gg/P4u6CttbRZ" aria-label="Discord" title="Discord"><i
+              class="fa-brands fa-discord"></i></a>
+        </div>
+      </header>
+
+      <form action="/" method="post" class="form-box">
+        <!-- Row 1 -->
+        <div class="row">
+          <div class="input-group">
+            <label for="age">Age</label>
+            <input type="number" id="age" name="age" placeholder="e.g., 35" min="18" value="{{ form_data.age }}"
+              required />
+          </div>
+          <div class="input-group">
+            <label for="gender">Gender</label>
+            <select id="gender" name="gender" required>
+              <option {% if form_data.gender=='Male' %}selected{% endif %}>Male</option>
+              <option {% if form_data.gender=='Female' %}selected{% endif %}>Female</option>
+            </select>
+          </div>
+          <div class="input-group">
+            <label for="marital_status">Marital Status</label>
+            <select id="marital_status" name="marital_status" required>
+              <option {% if form_data.marital_status=='Married' %}selected{% endif %}>Married</option>
+              <option {% if form_data.marital_status=='Single' %}selected{% endif %}>Single</option>
+              <option {% if form_data.marital_status=='Divorced' %}selected{% endif %}>Divorced</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Row 2 -->
+        <div class="row">
+          <div class="input-group">
+            <label for="job_title">Job Title</label>
+            <select id="job_title" name="job_title" required>
+              {% for job in ['Software Developer', 'Full Stack Developer', 'Frontend Developer', 'Backend Developer',
+              'Mobile App Developer', 'QA/Test Engineer', 'Automation Tester', 'DevOps Engineer', 'Cloud Engineer',
+              'Cloud Architect', 'Network Engineer', 'Network Administrator', 'System Administrator', 'IT Support
+              Specialist', 'Technical Support Engineer', 'Cybersecurity Analyst', 'Security Engineer', 'Ethical Hacker',
+              'Data Analyst', 'Business Analyst', 'Data Scientist', 'Machine Learning Engineer', 'AI Engineer', 'Deep
+              Learning Engineer', 'NLP Engineer', 'Business Intelligence Developer', 'Big Data Engineer', 'Database
+              Administrator (DBA)', 'Data Engineer', 'Product Manager', 'UI/UX Designer', 'Web Designer', 'Graphic
+              Designer', 'ERP Consultant (SAP/Oracle)', 'CRM Specialist (Salesforce)', 'IT Project Manager', 'Scrum
+              Master', 'Agile Coach', 'IT Consultant', 'Software Architect', 'Game Developer', 'Blockchain Developer',
+              'IoT Engineer', 'Embedded Systems Engineer', 'Robotics Engineer', 'Digital Marketing Analyst', 'SEO
+              Specialist', 'Social Media Manager', 'Content Strategist', 'Cloud Security Engineer', 'IAS Officer', 'IPS
+              Officer', 'IFS Officer', 'IRS Officer', 'State PCS Officer', 'Assistant Section Officer', 'Block
+              Development Officer (BDO)', 'District Magistrate', 'Tehsildar', 'Junior Engineer (JE)', 'Assistant
+              Engineer (AE)', 'Scientist at DRDO', 'Scientist at ISRO', 'Research Officer (CSIR/ICAR)', 'LDC (Lower
+              Division Clerk)', 'UDC (Upper Division Clerk)', 'SSC CGL Officer', 'Income Tax Inspector', 'Customs
+              Officer', 'Excise Officer', 'Railway Protection Force (RPF) Officer', 'Indian Railways Officer (RRB Group
+              A/B)', 'PSU Engineer (ONGC, NTPC, BHEL)', 'Bank Probationary Officer (PO)', 'Bank Clerk', 'Bank Specialist
+              Officer (SO)', 'RBI Grade B Officer', 'RBI Assistant', 'NABARD Grade A/B Officer', 'SEBI Grade A Officer',
+              'LIC AAO', 'LIC ADO', 'Insurance Advisor (GIC/NIC)', 'Financial Analyst', 'Investment Banker', 'Chartered
+              Accountant (CA)', 'Cost Accountant (CMA)', 'Company Secretary (CS)', 'Credit Analyst', 'Risk Analyst',
+              'Treasury Manager', 'Tax Consultant', 'Financial Planner', 'Wealth Manager', 'Stock Broker', 'Mutual Fund
+              Advisor', 'Portfolio Manager', 'Auditor', 'Actuary', 'Loan Officer'] %}
+              <option {% if form_data.job_title==job %}selected{% endif %}>{{ job }}</option>
+              {% endfor %}
+            </select>
+          </div>
+          <div class="input-group">
+            <label for="years_of_experience">Years of Experience</label>
+            <input type="number" id="years_of_experience" name="years_of_experience" placeholder="e.g., 5" min="0"
+              value="{{ form_data.years_of_experience }}" required />
+          </div>
+        </div>
+
+        <!-- Row 3 -->
+        <div class="row">
+          <div class="input-group">
+            <label for="education">Highest Education</label>
+            <select id="education" name="education" required>
+              <option {% if form_data.education=='PhD' %}selected{% endif %}>PhD</option>
+              <option {% if form_data.education=='Masters' %}selected{% endif %}>Masters</option>
+              <option {% if form_data.education=='Bachelors' %}selected{% endif %}>Bachelors</option>
+              <option {% if form_data.education=='12th' %}selected{% endif %}>12th</option>
+              <option {% if form_data.education=='10th' %}selected{% endif %}>10th</option>
+            </select>
+          </div>
+          <div class="input-group">
+            <label for="education_num">Education (Numeric)</label>
+            <input type="number" id="education_num" name="education_num" placeholder="e.g., 16 for Bachelors" min="1"
+              value="{{ form_data.education_num }}" required />
+            <!-- New Description -->
+            <small class="field-description">
+              PhD: 20, Masters: 18, Bachelors: 16, 12th: 12, 10th: 10
+            </small>
+          </div>
+          <div class="input-group">
+            <label for="hours_per_week">Hours per Week</label>
+            <input type="number" id="hours_per_week" name="hours_per_week" placeholder="e.g., 45" min="1"
+              value="{{ form_data.hours_per_week }}" required />
+          </div>
+        </div>
+
+        <!-- Row 4 -->
+        <div class="row">
+          <div class="input-group">
+            <label for="city">City</label>
+            <select id="city" name="city" required>
+              {% for city_name in ['Mumbai', 'Delhi', 'Bangalore', 'Hyderabad', 'Ahmedabad', 'Chennai', 'Kolkata',
+              'Surat', 'Pune', 'Jaipur', 'Lucknow', 'Kanpur', 'Nagpur', 'Indore', 'Thane', 'Bhopal', 'Visakhapatnam',
+              'Patna', 'Vadodara', 'Ludhiana', 'Agra', 'Nashik', 'Rourkela'] %}
+              <option {% if form_data.city==city_name %}selected{% endif %}>{{ city_name }}</option>
+              {% endfor %}
+            </select>
+          </div>
+          <div class="input-group">
+            <label for="job_location">Location Type</label>
+            <select id="job_location" name="job_location" required>
+              <option {% if form_data.job_location=='Urban' %}selected{% endif %}>Urban</option>
+              <option {% if form_data.job_location=='Suburban' %}selected{% endif %}>Suburban</option>
+              <option {% if form_data.job_location=='Rural' %}selected{% endif %}>Rural</option>
+            </select>
+          </div>
+          <div class="input-group">
+            <label for="nationality">Nationality</label>
+            <select id="nationality" name="nationality" required>
+              {% for nation in ['Indian', 'American', 'British', 'Canadian', 'Australian', 'German', 'French',
+              'Japanese', 'Chinese', 'Russian', 'Brazilian', 'South African'] %}
+              <option {% if form_data.nationality==nation %}selected{% endif %}>{{ nation }}</option>
+              {% endfor %}
+            </select>
+          </div>
+        </div>
+
+        <!-- Row 5: Submission -->
+        <div class="row submit-row">
+          <button type="submit" class="predict-btn">🔮 Predict Salary</button>
+          <div class="result-box" id="result">
+            <strong>{{ prediction_text }}</strong>
+          </div>
+          <a href="/" class="reset-btn">Reset</a>
+        </div>
+      </form>
+
+      <!-- Updated "How to Use" Section -->
+      <section class="how-to-use">
+        <h2>How to Use <span class="blue">Salary Scope</span></h2>
+        <div class="instruction-step">
+          <h3>Step 1: Enter Your Details</h3>
+          <p>Fill in all the fields in the form above with your professional and personal information. The more accurate
+            the data, the better the prediction.</p>
+        </div>
+        <div class="instruction-step">
+          <h3>Step 2: Get Your Prediction</h3>
+          <p>Click the "Predict Salary" button. Our AI model will analyze your inputs and estimate your potential annual
+            salary in Indian Rupees (Lakhs).</p>
+        </div>
+        <div class="instruction-step">
+          <h3>Step 3: Reset and Try Again</h3>
+          <p>To start over with a new set of details, simply click the "Reset" button. This will clear all the fields in
+            the form.</p>
+        </div>
+      </section>
+
+      <footer>
+        <p>© 2025 Salary Scope. All rights reserved.</p>
+        <p>Developed by <a href="https://github.com/SpicychieF05">Chirantan Mallick</a></p>
+      </footer>
+    </div>
+  </div>
+</body>
+
+</html>
