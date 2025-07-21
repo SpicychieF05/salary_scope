@@ -378,3 +378,42 @@ footer a:hover {
     padding: 20px 15px;
   }
 }
+
+.description-section {
+  border: 2px solid #2546ff;
+  background: linear-gradient(90deg, #1a1a2e 60%, #16213e 100%);
+  border-radius: 16px;
+  padding: 28px 24px 22px 24px;
+  margin-bottom: 32px;
+  box-shadow: 0 4px 24px 0 rgba(36, 99, 235, 0.12), 0 0 0 2px #2546ff33;
+  color: #e0e6f7;
+  position: relative;
+  overflow: hidden;
+}
+
+.description-section h2 {
+  color: #5fa8f6;
+  font-size: 2rem;
+  margin-top: 0;
+  margin-bottom: 12px;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+
+.description-section p {
+  font-size: 1.13rem;
+  line-height: 1.7;
+  margin: 0;
+  color: #c7d0e6;
+}
+
+.description-section .accuracy-highlight {
+  color: #fff;
+  background: linear-gradient(90deg, #2546ff 60%, #5fa8f6 100%);
+  padding: 2px 10px;
+  border-radius: 8px;
+  font-weight: 600;
+  margin: 0 4px;
+  box-shadow: 0 2px 8px 0 #2546ff44;
+  letter-spacing: 0.5px;
+}

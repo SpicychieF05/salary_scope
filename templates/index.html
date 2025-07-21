@@ -33,14 +33,13 @@
       </header>
 
       <!-- Description Section -->
-      <section class="description-section" style="border:2px solid #333;padding:20px;margin-bottom:30px;background-color:#1f1f1f;border-radius:12px;">
+      <section class="description-section">
         <h2>Description</h2>
         <p>
-          Welcome to <strong>Salary Scope</strong>! This tool uses a machine learning model trained on real-world data to predict your annual salary based on your profile. <br>
-          <strong>Model Accuracy:</strong> R² = 0.89 (89%)<br>
-          The model's accuracy is measured using the R² score, which means it explains 89% of the variance in the salary data.<br>
-          <br>
-          <strong>After you predict your salary,</strong> you will also see the authenticity of your prediction, shown as a percentage and a number, so you can trust the result!
+          Welcome to <strong>Salary Scope</strong>! This tool uses a state-of-the-art machine learning model trained on real-world data to predict your annual salary based on your professional profile.<br><br>
+          <span class="accuracy-highlight">Model Accuracy: R² = 0.89 (89%)</span><br>
+          <span style="color:#5fa8f6; font-weight:500;">Our model explains 89% of the variance in salary data, ensuring highly reliable predictions.</span><br><br>
+          <strong>After you predict your salary,</strong> you’ll also see the authenticity of your prediction, shown as a percentage and a number—so you can trust the result!
         </p>
       </section>
 
@@ -76,29 +75,108 @@
           <div class="input-group">
             <label for="job_title">Job Title</label>
             <select id="job_title" name="job_title" required>
-              {% for job in ['Select your job title','Software Developer', 'Full Stack Developer', 'Frontend Developer',
-              'Backend Developer',
-              'Mobile App Developer', 'QA/Test Engineer', 'Automation Tester', 'DevOps Engineer', 'Cloud Engineer',
-              'Cloud Architect', 'Network Engineer', 'Network Administrator', 'System Administrator', 'IT Support
-              Specialist', 'Technical Support Engineer', 'Cybersecurity Analyst', 'Security Engineer', 'Ethical Hacker',
-              'Data Analyst', 'Business Analyst', 'Data Scientist', 'Machine Learning Engineer', 'AI Engineer', 'Deep
-              Learning Engineer', 'NLP Engineer', 'Business Intelligence Developer', 'Big Data Engineer', 'Database
-              Administrator (DBA)', 'Data Engineer', 'Product Manager', 'UI/UX Designer', 'Web Designer', 'Graphic
-              Designer', 'ERP Consultant (SAP/Oracle)', 'CRM Specialist (Salesforce)', 'IT Project Manager', 'Scrum
-              Master', 'Agile Coach', 'IT Consultant', 'Software Architect', 'Game Developer', 'Blockchain Developer',
-              'IoT Engineer', 'Embedded Systems Engineer', 'Robotics Engineer', 'Digital Marketing Analyst', 'SEO
-              Specialist', 'Social Media Manager', 'Content Strategist', 'Cloud Security Engineer', 'IAS Officer', 'IPS
-              Officer', 'IFS Officer', 'IRS Officer', 'State PCS Officer', 'Assistant Section Officer', 'Block
-              Development Officer (BDO)', 'District Magistrate', 'Tehsildar', 'Junior Engineer (JE)', 'Assistant
-              Engineer (AE)', 'Scientist at DRDO', 'Scientist at ISRO', 'Research Officer (CSIR/ICAR)', 'LDC (Lower
-              Division Clerk)', 'UDC (Upper Division Clerk)', 'SSC CGL Officer', 'Income Tax Inspector', 'Customs
-              Officer', 'Excise Officer', 'Railway Protection Force (RPF) Officer', 'Indian Railways Officer (RRB Group
-              A/B)', 'PSU Engineer (ONGC, NTPC, BHEL)', 'Bank Probationary Officer (PO)', 'Bank Clerk', 'Bank Specialist
-              Officer (SO)', 'RBI Grade B Officer', 'RBI Assistant', 'NABARD Grade A/B Officer', 'SEBI Grade A Officer',
-              'LIC AAO', 'LIC ADO', 'Insurance Advisor (GIC/NIC)', 'Financial Analyst', 'Investment Banker', 'Chartered
-              Accountant (CA)', 'Cost Accountant (CMA)', 'Company Secretary (CS)', 'Credit Analyst', 'Risk Analyst',
-              'Treasury Manager', 'Tax Consultant', 'Financial Planner', 'Wealth Manager', 'Stock Broker', 'Mutual Fund
-              Advisor', 'Portfolio Manager', 'Auditor', 'Actuary', 'Loan Officer'] %}
+              {% for job in [
+                'Software Developer / Engineer',
+                'Frontend Developer',
+                'Backend Developer',
+                'Full Stack Developer',
+                'Mobile App Developer (Android/iOS)',
+                'Web Developer',
+                'DevOps Engineer',
+                'Cloud Engineer',
+                'Database Administrator (DBA)',
+                'Systems Administrator',
+                'IT Support Engineer',
+                'QA Tester / Quality Analyst',
+                'Automation Tester',
+                'UI/UX Designer',
+                'Data Scientist',
+                'Data Analyst',
+                'Machine Learning Engineer',
+                'AI Engineer',
+                'Cybersecurity Analyst',
+                'Network Engineer',
+                'IT Infrastructure Engineer',
+                'Blockchain Developer',
+                'Game Developer',
+                'Embedded Systems Engineer',
+                'IoT Developer',
+                'ERP Consultant (SAP, Oracle, etc.)',
+                'Site Reliability Engineer (SRE)',
+                'Software Architect',
+                'Technical Project Manager',
+                'Technical Product Manager',
+                'IT Project Manager',
+                'IT Business Analyst',
+                'Product Manager',
+                'Scrum Master',
+                'Agile Coach',
+                'Technology Consultant',
+                'Systems Analyst',
+                'Solution Architect',
+                'IT Operations Manager',
+                'Chief Technology Officer (CTO)',
+                'SEO Specialist',
+                'Digital Marketing Executive',
+                'Content Manager',
+                'Web Designer',
+                'WordPress Developer',
+                'Social Media Manager',
+                'Email Marketing Specialist',
+                'UI Developer',
+                'Graphic Designer (IT-related)',
+                'AWS Developer',
+                'Azure Cloud Engineer',
+                'Google Cloud Engineer',
+                'DevOps Specialist',
+                'Kubernetes Administrator',
+                'Cloud Security Analyst',
+                'Cloud Solutions Architect',
+                'CI/CD Engineer',
+                'Business Intelligence Analyst',
+                'Data Engineer',
+                'Big Data Developer',
+                'Power BI Developer',
+                'Tableau Developer',
+                'R Programmer',
+                'Python Developer (Data-focused)',
+                'Statistician (IT/Data companies)',
+                'Security Analyst',
+                'Ethical Hacker / Penetration Tester',
+                'Network Security Engineer',
+                'Information Security Officer',
+                'SOC Analyst',
+                'IT Auditor',
+                'Cryptographer',
+                'Compliance Analyst (IT Security)',
+                'IT Helpdesk Support',
+                'Desktop Support Engineer',
+                'Field Service Engineer',
+                'Hardware Engineer',
+                'Telecom Engineer',
+                'IT Technician',
+                'NOC Engineer (Network Operation Center)',
+                'IT Trainer / Instructor',
+                'Technical Writer',
+                'Curriculum Developer (IT training)',
+                'E-learning Developer',
+                'Online Coding Instructor (EdTech)',
+                'ERP Manager (in banks, hospitals, etc.)',
+                'MIS Executive',
+                'System Integrator',
+                'IT Compliance Officer',
+                'IT Procurement Specialist',
+                'Junior Software Developer',
+                'Intern (Software/IT)',
+                'Trainee Engineer (IT)',
+                'Desktop Engineer',
+                'Customer Support Executive (Tech)',
+                'AR/VR Developer',
+                'Prompt Engineer (AI)',
+                'Chatbot Developer',
+                'Metaverse Developer',
+                'Quantum Computing Researcher'
+              ] %}
               <option {% if form_data.job_title==job %}selected{% endif %}>{{ job }}</option>
               {% endfor %}
             </select>
