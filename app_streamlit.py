@@ -2,6 +2,7 @@ import streamlit as st
 import joblib
 import numpy as np
 import os
+import pandas as pd # Added for DataFrame creation
 
 # Load model and encoders
 model = joblib.load('model.joblib')
@@ -35,14 +36,35 @@ with st.form("salary_form"):
     # Add more fields as needed (education, marital status, etc.)
     submitted = st.form_submit_button("Predict Salary")
 
+# Add these widgets to your form:
+gender = st.selectbox("Gender", ["Select", "Male", "Female", "Other"])
+education = st.selectbox("Education", ["Select", "PhD", "Masters", "Bachelors", "12th", "10th"])
+city = st.text_input("City")
+marital_status = st.selectbox("Marital Status", ["Select", "Single", "Married", "Divorced", "Widowed"])
+age = st.number_input("Age", min_value=18, max_value=70, value=25)
+years_of_experience = st.number_input("Years of Experience", min_value=0, max_value=50, value=2)
+education_num = st.number_input("Education Number", min_value=10, max_value=20, value=16)
+hours_per_week = st.number_input("Hours per Week", min_value=1, max_value=100, value=45)
+
+# In your form submit logic:
 if submitted:
-    if job_title == "Select" or location == "Select" or nationality == "Select":
+    if "Select" in [job_title, location, nationality, gender, education, marital_status]:
         st.error("Please select all fields.")
     else:
-        # Example: encode inputs (update as per your model's requirements)
-        # X = np.array([[...encoded values...]], dtype=object)
-        # prediction = model.predict(X)
-        # For demonstration, we'll use a placeholder value:
-        prediction = [1234567]  # Replace with actual prediction logic
+        # Prepare input as DataFrame
+        input_df = pd.DataFrame([{
+            "gender": gender,
+            "education": education,
+            "job_title": job_title,
+            "job_location": location,
+            "city": city,
+            "nationality": nationality,
+            "marital_status": marital_status,
+            "age": age,
+            "years_of_experience": years_of_experience,
+            "education_num": education_num,
+            "hours_per_week": hours_per_week
+        }])
+        prediction = model.predict(input_df)
         st.success(f"Predicted Salary: ₹{prediction[0]:,.0f}")
         st.info("Authenticity: 89% (R² = 0.89)")

@@ -15,15 +15,15 @@
 - <span style="color:#5fa8f6;">Accurate Predictions:</span> Utilizes a Gradient Boosting Regressor model with <strong style="color:#2546ff;">R² = 0.89 (89%)</strong> accuracy.
 - <span style="color:#5fa8f6;">Interactive Web Interface:</span> User-friendly form to input your details and get instant salary predictions.
 - <span style="color:#5fa8f6;">Data-Driven Insights:</span> Helps professionals and employers understand salary benchmarks in the industry.
-- <span style="color:#5fa8f6;">Easy Deployment:</span> Optimized for Render cloud platform.
+- <span style="color:#5fa8f6;">Easy Deployment:</span> Optimized for Streamlit Cloud platform.
 
 ---
 
 ## <span style="color:#2546ff;">🛠️ Tech Stack & Tools</span>
-- <span style="color:#5fa8f6;">Backend:</span> Python, Flask
+- <span style="color:#5fa8f6;">Frontend & Backend:</span> Python, Streamlit
 - <span style="color:#5fa8f6;">Machine Learning:</span> scikit-learn, pandas, numpy
 - <span style="color:#5fa8f6;">Model:</span> Gradient Boosting Regressor
-- <span style="color:#5fa8f6;">Deployment:</span> Render (Gunicorn)
+- <span style="color:#5fa8f6;">Deployment:</span> Streamlit Cloud
 
 ---
 
@@ -47,26 +47,21 @@
    python train_model.py
 
 # 5. Run the app locally
-   python app.py
+   streamlit run app_streamlit.py
 ```
-The app will be available at [http://localhost:5000](http://localhost:5000)
+The app will be available at [http://localhost:8501](http://localhost:8501)
 
 ---
 
-## <span style="color:#2546ff;">☁️ Deploying on Render</span>
+## <span style="color:#2546ff;">☁️ Deploying on Streamlit Cloud</span>
 
 1. <span style="color:#5fa8f6;">Push your code to GitHub.</span>
-2. <span style="color:#5fa8f6;">Create a new Web Service on <a href="https://render.com/" style="color:#2546ff;">Render</a>:</span>
-   - Connect your GitHub repo.
-   - Render will auto-detect your Python app.
-   - Make sure you have a <code>Procfile</code> with:
-     ```
-     web: gunicorn app:app
-     ```
-   - All required files (<code>model.joblib</code>, <code>requirements.txt</code>, etc.) should be in the repo.
-3. <span style="color:#5fa8f6;">Deploy!</span>
-   - Render will build and start your app.
-   - Visit your Render URL to use Salary Scope.
+2. <span style="color:#5fa8f6;">Go to <a href="https://streamlit.io/cloud" style="color:#2546ff;">Streamlit Cloud</a> and sign in.</span>
+3. <span style="color:#5fa8f6;">Click "New app" and connect your GitHub repo.</span>
+4. <span style="color:#5fa8f6;">Set the main file to <code>app_streamlit.py</code>.</span>
+5. <span style="color:#5fa8f6;">Deploy!</span>
+   - Streamlit Cloud will build and start your app.
+   - Visit your Streamlit Cloud URL to use Salary Scope.
 
 ---
 
@@ -81,14 +76,15 @@ The app will be available at [http://localhost:5000](http://localhost:5000)
 
 ```text
 Salary-scope/
-  app.py
+  app_streamlit.py
   train_model.py
   requirements.txt
-  Procfile
   model.joblib
+  label_encoder.joblib
   static/
-  templates/
+  assets/
   README.md
+  indian_salary_data_500.csv
 ```
 
 ---

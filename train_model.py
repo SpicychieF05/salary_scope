@@ -5,13 +5,13 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.compose import ColumnTransformer
 from sklearn.pipeline import Pipeline
-from sklearn.preprocessing import OneHotEncoder, StandardScaler
+from sklearn.preprocessing import OneHotEncoder, StandardScaler, LabelEncoder
 from sklearn.ensemble import GradientBoostingRegressor
 from sklearn.metrics import r2_score, mean_absolute_error
 import joblib
 import sys
 
-print("Starting model training process...")
+print("\n=== Starting model training process ===\n")
 
 # --- 1. Load Data ---
 try:
@@ -105,4 +105,12 @@ print("------------------------\n")
 # --- 6. Save the Final Pipeline ---
 joblib.dump(model_pipeline, 'model.joblib')
 print("Final model pipeline saved successfully as 'model.joblib'")
-print("Model training process completed successfully.")
+
+# --- 7. Save LabelEncoder for job_title ---
+# This is used for consistent encoding in the Streamlit app
+label_encoder = LabelEncoder()
+label_encoder.fit(X['job_title'])
+joblib.dump(label_encoder, 'label_encoder.joblib')
+print("Label encoder for job_title saved as 'label_encoder.joblib'")
+
+print("=== Model training process completed successfully ===\n")
