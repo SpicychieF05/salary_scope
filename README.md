@@ -16,11 +16,12 @@
   <strong>AI-powered, mobile-optimized salary prediction app with a modern, glowing UI.</strong>
 </p>
 
-<p align="center">
+<div align="center">
+  <h3>🌐 Live Demo</h3>
   <a href="https://salary-scope-spycychief.streamlit.app/" style="font-size:1.1rem;font-weight:600;color:#2546ff;">
-    🌐 Live Demo: https://salary-scope-spicychief.streamlit.app/
+    http://salary-scope-spicychief.streamlit.app/
   </a>
-</p>
+</div>
 
 ---
 
