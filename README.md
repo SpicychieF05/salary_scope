@@ -1,141 +1,101 @@
-![Salary Scope Banner](./assets/banner.jpg.jpg)
+# Salary Scope: A Data Scientist Salary Predictor
 
-# 📊 Salary Scope: A Data Scientist Salary Predictor
-
-Welcome to **Salary Scope**, a web application that predicts the salary of a data scientist based on key factors like experience level, employment type, and location. This project leverages a machine learning model trained on a comprehensive dataset to provide insightful salary estimates.
-
-The live application is deployed on Vercel. You can access it here: **[Link to your deployed Vercel app]**
+Welcome to **Salary Scope**, a web application that predicts the salary of a data scientist based on key factors like experience, education, and location. This project uses a machine learning model trained on real-world data to provide accurate salary estimates.
 
 ---
 
 ## ✨ Features
-
-* **Accurate Predictions**: Utilizes a Random Forest Regressor model with **89% accuracy**.
-* **Interactive Web Interface**: A clean and user-friendly interface built with Flask to input data and receive salary predictions.
-* **Data-Driven Insights**: Helps aspiring data scientists and employers understand salary benchmarks in the industry.
-* **Scalable Deployment**: Deployed on Vercel for fast, reliable, and scalable performance.
+- **Accurate Predictions:** Utilizes a Gradient Boosting Regressor model with **R² = 0.89 (89%)** accuracy.
+- **Interactive Web Interface:** User-friendly form to input your details and get instant salary predictions.
+- **Data-Driven Insights:** Helps professionals and employers understand salary benchmarks in the industry.
+- **Easy Deployment:** Optimized for Render cloud platform.
 
 ---
 
 ## 🛠️ Tech Stack & Tools
-
-This project was built using a modern stack for machine learning and web development:
-
-* **Backend**: Python, Flask
-* **Machine Learning**: Scikit-learn, Pandas, NumPy
-* **Model**: Random Forest Regressor
-* **Deployment**: Vercel
-* **Code Management**: Git & GitHub
+- **Backend:** Python, Flask
+- **Machine Learning:** scikit-learn, pandas, numpy
+- **Model:** Gradient Boosting Regressor
+- **Deployment:** Render (Gunicorn)
 
 ---
 
-## 🚀 Getting Started
+## 🚀 Getting Started (Local Development)
 
-Follow these instructions to get a local copy up and running for development and testing purposes.
-
-### Prerequisites
-
-* Python 3.8 or higher
-* pip (Python package installer)
-
-### Installation & Setup
-
-1.  **Clone the repository:**
-    ```sh
-    git clone [https://github.com/SpicychieF05/Salary-Scope.git](https://github.com/SpicychieF05/Salary-Scope.git)
-    cd Salary-Scope
-    ```
-
-2.  **Create a virtual environment:**
-    This isolates the project dependencies from your system's Python installation.
-    ```sh
-    # For Windows
-    python -m venv venv
-    venv\Scripts\activate
-
-    # For macOS/Linux
-    python3 -m venv venv
-    source venv/bin/activate
-    ```
-
-3.  **Install the required packages:**
-    The `requirements.txt` file contains all the necessary Python libraries.
-    ```sh
-    pip install -r requirements.txt
-    ```
-
-4.  **(Optional) Train the model:**
-    The repository already includes pre-trained model files (`.joblib`). However, if you want to retrain the model on new data, run the training script:
-    ```sh
-    python train_model.py
-    ```
-
-5.  **Run the Flask application:**
-    This will start a local development server.
-    ```sh
-    python api/index.py
-    ```
-    Your application should now be running locally at `http://127.0.0.1:5000`.
+1. **Clone the repository:**
+   ```sh
+   git clone <your-repo-url>
+   cd Salary-scope
+   ```
+2. **Create a virtual environment:**
+   ```sh
+   python -m venv venv
+   venv\Scripts\activate  # On Windows
+   # or
+   source venv/bin/activate  # On macOS/Linux
+   ```
+3. **Install dependencies:**
+   ```sh
+   pip install -r requirements.txt
+   ```
+4. **Train the model (if needed):**
+   ```sh
+   python train_model.py
+   ```
+5. **Run the app locally:**
+   ```sh
+   python app.py
+   ```
+   The app will be available at [http://localhost:5000](http://localhost:5000)
 
 ---
 
-## 🛠️ Important Notes for Vercel Deployment
+## ☁️ Deploying on Render
 
-- The main Flask app for Vercel is now located at `api/index.py`.
-- The original `app.py` can still be used for local development.
-- All static files, templates, and the ML model are referenced with absolute paths for compatibility.
-- Model accuracy and UI design remain unchanged (R² ≈ 0.89).
-
----
-
-## 📁 Project Structure
-
-Here is an overview of the project's file structure:
-
-
-.
-├── api/
-│   └── index.py         # Main Flask application file for local and Vercel execution
-├── assets/              # Contains static images like the banner
-│   └── banner.jpg
-├── static/              # Contains static assets (CSS, JS, images)
-├── templates/           # Contains HTML templates for the web interface
-├── .gitignore           # Specifies files for Git to ignore
-├── label_encoder.joblib # Saved label encoder for categorical features
-├── model.joblib         # The trained Random Forest Regressor model
-├── model_performance.joblib # (Optional) Saved model performance metrics
-├── requirements.txt     # A list of all Python dependencies
-├── train_model.py       # Python script to train the ML model
-└── vercel.json          # Configuration file for Vercel deployment
-
+1. **Push your code to GitHub.**
+2. **Create a new Web Service on [Render](https://render.com/):**
+   - Connect your GitHub repo.
+   - Render will auto-detect your Python app.
+   - Make sure you have a `Procfile` with:
+     ```
+     web: gunicorn app:app
+     ```
+   - All required files (`model.joblib`, `requirements.txt`, etc.) should be in the repo.
+3. **Deploy!**
+   - Render will build and start your app.
+   - Visit your Render URL to use Salary Scope.
 
 ---
 
 ## 📈 Model Performance
 
-The machine learning model was trained and evaluated, achieving the following performance:
+- **Model:** Gradient Boosting Regressor
+- **Accuracy Score (R²):** **<span style="color:#2546ff;font-weight:bold;">89%</span>**
 
-* **Model**: Random Forest Regressor
-* **Accuracy Score (R²)**: **89%**
+---
 
-The `train_model.py` script contains the complete workflow, from data preprocessing and feature engineering to model training and evaluation.
+## 📁 Project Structure
+
+```
+Salary-scope/
+  app.py
+  train_model.py
+  requirements.txt
+  Procfile
+  model.joblib
+  static/
+  templates/
+  README.md
+```
 
 ---
 
 ## 🤝 Contributing
 
-Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-
-1.  Fork the Project
-2.  Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3.  Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4.  Push to the Branch (`git push origin feature/AmazingFeature`)
-5.  Open a Pull Request
+Contributions are welcome! Please fork the repo and submit a pull request.
 
 ---
 
 ## 📄 License
 
-Distributed under the MIT License. See `LICENSE` for more information.
+Distributed under the MIT License.
