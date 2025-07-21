@@ -79,14 +79,12 @@ Follow these instructions to get a local copy up and running for development and
 
 ---
 
-## ☁️ Deployment
+## 🛠️ Important Notes for Vercel Deployment
 
-This project is configured for easy deployment on **Vercel**. The `vercel.json` file handles the configuration for Python serverless functions. To deploy your own version:
-
-1.  Push your code to your GitHub repository.
-2.  Go to [Vercel](https://vercel.com) and sign up with your GitHub account.
-3.  Click "Add New... > Project" and import your GitHub repository.
-4.  Vercel will automatically detect the settings in `vercel.json` and deploy the application.
+- The main Flask app for Vercel is now located at `api/index.py`.
+- The original `app.py` can still be used for local development.
+- All static files, templates, and the ML model are referenced with absolute paths for compatibility.
+- Model accuracy and UI design remain unchanged (R² ≈ 0.89).
 
 ---
 
