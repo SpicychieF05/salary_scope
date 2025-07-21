@@ -62,10 +62,9 @@
           <div class="input-group">
             <label for="marital_status">Marital Status</label>
             <select id="marital_status" name="marital_status" required>
-              <option {% if form_data.marital_status=='Select' %}selected{% endif %}>Select</option>
-              <option {% if form_data.marital_status=='Married' %}selected{% endif %}>Married</option>
-              <option {% if form_data.marital_status=='Single' %}selected{% endif %}>Single</option>
-              <option {% if form_data.marital_status=='Divorced' %}selected{% endif %}>Divorced</option>
+              {% for status in ['Divorced','Married','Single','Widowed']|sort %}
+              <option {% if form_data.marital_status==status %}selected{% endif %}>{{ status }}</option>
+              {% endfor %}
             </select>
           </div>
         </div>
@@ -76,107 +75,108 @@
             <label for="job_title">Job Title</label>
             <select id="job_title" name="job_title" required>
               {% for job in [
-                'Software Developer / Engineer',
-                'Frontend Developer',
-                'Backend Developer',
-                'Full Stack Developer',
-                'Mobile App Developer (Android/iOS)',
-                'Web Developer',
-                'DevOps Engineer',
-                'Cloud Engineer',
-                'Database Administrator (DBA)',
-                'Systems Administrator',
-                'IT Support Engineer',
-                'QA Tester / Quality Analyst',
-                'Automation Tester',
-                'UI/UX Designer',
-                'Data Scientist',
-                'Data Analyst',
-                'Machine Learning Engineer',
                 'AI Engineer',
-                'Cybersecurity Analyst',
-                'Network Engineer',
-                'IT Infrastructure Engineer',
-                'Blockchain Developer',
-                'Game Developer',
-                'Embedded Systems Engineer',
-                'IoT Developer',
-                'ERP Consultant (SAP, Oracle, etc.)',
-                'Site Reliability Engineer (SRE)',
-                'Software Architect',
-                'Technical Project Manager',
-                'Technical Product Manager',
-                'IT Project Manager',
-                'IT Business Analyst',
-                'Product Manager',
-                'Scrum Master',
                 'Agile Coach',
-                'Technology Consultant',
-                'Systems Analyst',
-                'Solution Architect',
-                'IT Operations Manager',
-                'Chief Technology Officer (CTO)',
-                'SEO Specialist',
-                'Digital Marketing Executive',
-                'Content Manager',
-                'Web Designer',
-                'WordPress Developer',
-                'Social Media Manager',
-                'Email Marketing Specialist',
-                'UI Developer',
-                'Graphic Designer (IT-related)',
+                'AR/VR Developer',
+                'Automation Tester',
                 'AWS Developer',
                 'Azure Cloud Engineer',
-                'Google Cloud Engineer',
-                'DevOps Specialist',
-                'Kubernetes Administrator',
+                'Backend Developer',
+                'Big Data Developer',
+                'Blockchain Developer',
+                'Business Intelligence Analyst',
+                'Chatbot Developer',
+                'Chief Technology Officer (CTO)',
+                'CI/CD Engineer',
+                'Cloud Engineer',
                 'Cloud Security Analyst',
                 'Cloud Solutions Architect',
-                'CI/CD Engineer',
-                'Business Intelligence Analyst',
-                'Data Engineer',
-                'Big Data Developer',
-                'Power BI Developer',
-                'Tableau Developer',
-                'R Programmer',
-                'Python Developer (Data-focused)',
-                'Statistician (IT/Data companies)',
-                'Security Analyst',
-                'Ethical Hacker / Penetration Tester',
-                'Network Security Engineer',
-                'Information Security Officer',
-                'SOC Analyst',
-                'IT Auditor',
-                'Cryptographer',
                 'Compliance Analyst (IT Security)',
-                'IT Helpdesk Support',
-                'Desktop Support Engineer',
-                'Field Service Engineer',
-                'Hardware Engineer',
-                'Telecom Engineer',
-                'IT Technician',
-                'NOC Engineer (Network Operation Center)',
-                'IT Trainer / Instructor',
-                'Technical Writer',
-                'Curriculum Developer (IT training)',
-                'E-learning Developer',
-                'Online Coding Instructor (EdTech)',
-                'ERP Manager (in banks, hospitals, etc.)',
-                'MIS Executive',
-                'System Integrator',
-                'IT Compliance Officer',
-                'IT Procurement Specialist',
-                'Junior Software Developer',
-                'Intern (Software/IT)',
-                'Trainee Engineer (IT)',
-                'Desktop Engineer',
+                'Content Manager',
+                'Cryptographer',
                 'Customer Support Executive (Tech)',
-                'AR/VR Developer',
-                'Prompt Engineer (AI)',
-                'Chatbot Developer',
+                'Curriculum Developer (IT training)',
+                'Data Analyst',
+                'Data Engineer',
+                'Database Administrator (DBA)',
+                'Desktop Engineer',
+                'Desktop Support Engineer',
+                'DevOps Engineer',
+                'DevOps Specialist',
+                'Digital Marketing Executive',
+                'E-learning Developer',
+                'Email Marketing Specialist',
+                'Embedded Systems Engineer',
+                'ERP Consultant (SAP, Oracle, etc.)',
+                'ERP Manager (in banks, hospitals, etc.)',
+                'Ethical Hacker / Penetration Tester',
+                'Field Service Engineer',
+                'Frontend Developer',
+                'Game Developer',
+                'Google Cloud Engineer',
+                'Graphic Designer (IT-related)',
+                'Hardware Engineer',
+                'Information Security Officer',
+                'Intern (Software/IT)',
+                'IoT Developer',
+                'IT Auditor',
+                'IT Business Analyst',
+                'IT Compliance Officer',
+                'IT Helpdesk Support',
+                'IT Infrastructure Engineer',
+                'IT Operations Manager',
+                'IT Procurement Specialist',
+                'IT Project Manager',
+                'IT Support Engineer',
+                'IT Technician',
+                'IT Trainer / Instructor',
+                'Junior Software Developer',
+                'Kubernetes Administrator',
+                'Machine Learning Engineer',
+                'Marital Status',
                 'Metaverse Developer',
-                'Quantum Computing Researcher'
-              ] %}
+                'MIS Executive',
+                'Mobile App Developer (Android/iOS)',
+                'NOC Engineer (Network Operation Center)',
+                'Network Engineer',
+                'Network Security Engineer',
+                'Online Coding Instructor (EdTech)',
+                'PGDM in Business Analytics',
+                'Ph.D. in Artificial Intelligence',
+                'Ph.D. in Computer Science',
+                'Ph.D. in Data Science',
+                'Ph.D. in Information Technology',
+                'Power BI Developer',
+                'Product Manager',
+                'Prompt Engineer (AI)',
+                'Python Developer (Data-focused)',
+                'QA Tester / Quality Analyst',
+                'Quantum Computing Researcher',
+                'R Programmer',
+                'Scrum Master',
+                'Security Analyst',
+                'Site Reliability Engineer (SRE)',
+                'SOC Analyst',
+                'Software Architect',
+                'Software Developer / Engineer',
+                'Solution Architect',
+                'Statistician (IT/Data companies)',
+                'Systems Administrator',
+                'Systems Analyst',
+                'System Integrator',
+                'Tableau Developer',
+                'Technical Product Manager',
+                'Technical Project Manager',
+                'Technical Writer',
+                'Telecom Engineer',
+                'Trainee Engineer (IT)',
+                'UI Developer',
+                'UI/UX Designer',
+                'Web Designer',
+                'Web Developer',
+                'Widowed',
+                'WordPress Developer'
+              ]|sort %}
               <option {% if form_data.job_title==job %}selected{% endif %}>{{ job }}</option>
               {% endfor %}
             </select>
@@ -193,12 +193,30 @@
           <div class="input-group">
             <label for="education">Highest Education</label>
             <select id="education" name="education" required>
-              <option {% if form_data.education=='Select' %}selected{% endif %}>Select</option>
-              <option {% if form_data.education=='PhD' %}selected{% endif %}>PhD</option>
-              <option {% if form_data.education=='Masters' %}selected{% endif %}>Masters</option>
-              <option {% if form_data.education=='Bachelors' %}selected{% endif %}>Bachelors</option>
-              <option {% if form_data.education=='12th' %}selected{% endif %}>12th</option>
-              <option {% if form_data.education=='10th' %}selected{% endif %}>10th</option>
+              {% for edu in [
+                'BCA (Bachelor of Computer Applications)',
+                'B.E. in Computer Engineering',
+                'B.Sc. in Computer Science',
+                'B.Sc. in Information Technology',
+                'B.Tech in Computer Science and Engineering',
+                'B.Tech in Information Technology',
+                'B.Voc in Software Development',
+                'MCA (Master of Computer Applications)',
+                'M.E. in Software Systems',
+                'M.Sc. in Computer Science',
+                'M.Sc. in Information Technology',
+                'M.Tech in Computer Science',
+                'M.Tech in Information Technology',
+                'MBA in Information Technology',
+                'MBA in Systems or IT Management',
+                'PGDM in Business Analytics',
+                'Ph.D. in Artificial Intelligence',
+                'Ph.D. in Computer Science',
+                'Ph.D. in Data Science',
+                'Ph.D. in Information Technology'
+              ]|sort %}
+              <option {% if form_data.education==edu %}selected{% endif %}>{{ edu }}</option>
+              {% endfor %}
             </select>
           </div>
           <div class="input-group">
@@ -222,10 +240,9 @@
           <div class="input-group">
             <label for="city">City</label>
             <select id="city" name="city" required>
-              {% for city_name in ['Select', 'Mumbai', 'Delhi', 'Bangalore', 'Hyderabad', 'Ahmedabad', 'Chennai',
-              'Kolkata',
-              'Surat', 'Pune', 'Jaipur', 'Lucknow', 'Kanpur', 'Nagpur', 'Indore', 'Thane', 'Bhopal', 'Visakhapatnam',
-              'Patna', 'Vadodara', 'Ludhiana', 'Agra', 'Nashik', 'Rourkela'] %}
+              {% for city_name in [
+                'Agra','Ahmedabad','Bangalore','Bhopal','Chennai','Delhi','Hyderabad','Indore','Jaipur','Kanpur','Kolkata','Lucknow','Ludhiana','Mumbai','Nashik','Patna','Pune','Rourkela','Surat','Thane','Vadodara','Visakhapatnam'
+              ]|sort %}
               <option {% if form_data.city==city_name %}selected{% endif %}>{{ city_name }}</option>
               {% endfor %}
             </select>
@@ -242,8 +259,7 @@
           <div class="input-group">
             <label for="nationality">Nationality</label>
             <select id="nationality" name="nationality" required>
-              {% for nation in ['Select','Indian', 'American', 'British', 'Canadian', 'Australian', 'German', 'French',
-              'Japanese', 'Chinese', 'Russian', 'Brazilian', 'South African'] %}
+              {% for nation in ['American','Australian','British','Canadian','Chinese','French','German','Indian','Japanese','Russian','South African']|sort %}
               <option {% if form_data.nationality==nation %}selected{% endif %}>{{ nation }}</option>
               {% endfor %}
             </select>
