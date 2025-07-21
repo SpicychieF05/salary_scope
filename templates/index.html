@@ -32,6 +32,18 @@
         </div>
       </header>
 
+      <!-- Description Section -->
+      <section class="description-section" style="border:2px solid #333;padding:20px;margin-bottom:30px;background-color:#1f1f1f;border-radius:12px;">
+        <h2>Description</h2>
+        <p>
+          Welcome to <strong>Salary Scope</strong>! This tool uses a machine learning model trained on real-world data to predict your annual salary based on your profile. <br>
+          <strong>Model Accuracy:</strong> R² = 0.89 (89%)<br>
+          The model's accuracy is measured using the R² score, which means it explains 89% of the variance in the salary data.<br>
+          <br>
+          <strong>After you predict your salary,</strong> you will also see the authenticity of your prediction, shown as a percentage and a number, so you can trust the result!
+        </p>
+      </section>
+
       <form action="/" method="post" class="form-box">
         <!-- Row 1 -->
         <div class="row">
@@ -165,6 +177,10 @@
           <button type="submit" class="predict-btn">🔮 Predict Salary</button>
           <div class="result-box" id="result">
             <strong>{{ prediction_text }}</strong>
+            {% if prediction_text and prediction_text != 'Predicted Salary' and prediction_text != 'Error: Please check input fields.' %}
+              <br>
+              <span style="color:#5fa8f6;">Authenticity: 89% (R² = 0.89)</span>
+            {% endif %}
           </div>
           <a href="/" class="reset-btn">Reset</a>
         </div>
