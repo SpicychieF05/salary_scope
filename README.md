@@ -18,8 +18,8 @@
 
 <div align="center">
   <h3>🌐 Live Demo</h3>
-  <a href="https://salary-scope-spycychief.streamlit.app/" style="font-size:1.1rem;font-weight:600;color:#2546ff;">
-    http://salary-scope-spicychief.streamlit.app/
+  <a href="http://salary-scope-spicychief.streamlit.app//" style="font-size:1.1rem;font-weight:600;color:#2546ff;">
+    Salary-scope-spicychief.streamlit.app
   </a>
 </div>
 
@@ -85,7 +85,7 @@ The app will be available at [http://localhost:8501](http://localhost:8501)
 5. **Deploy!**
    - Streamlit Cloud will build and start your app.
    - Visit your Streamlit Cloud URL to use Salary Scope.
-   - **Live App:** [https://salary-scope-spycychief.streamlit.app/](https://salary-scope-spycychief.streamlit.app/)
+   - **Live App:** [Salary-Scope-Spycychief.streamlit.app](http://salary-scope-spicychief.streamlit.app/)
 
 ---
 
