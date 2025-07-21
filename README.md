@@ -9,6 +9,10 @@
   <strong>Predict your salary with confidence using AI-powered insights.</strong>
 </p>
 
+<p align="center">
+  <a href="https://salary-scope-spycychief.streamlit.app/" style="font-size:1.1rem;font-weight:600;color:#2546ff;">🌐 Live Demo: salary-scope-spycychief.streamlit.app</a>
+</p>
+
 ---
 
 ## <span style="color:#2546ff;">✨ Features</span>
@@ -62,6 +66,7 @@ The app will be available at [http://localhost:8501](http://localhost:8501)
 5. <span style="color:#5fa8f6;">Deploy!</span>
    - Streamlit Cloud will build and start your app.
    - Visit your Streamlit Cloud URL to use Salary Scope.
+   - <strong>Live App:</strong> <a href="https://salary-scope-spycychief.streamlit.app/">https://salary-scope-spycychief.streamlit.app/</a>
 
 ---
 
