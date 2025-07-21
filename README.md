@@ -3,35 +3,46 @@
   <img src="assets/banner.jpg.jpg" alt="Salary Scope Banner" style="width:100%;max-width:900px;border-radius:16px;box-shadow:0 4px 24px #2546ff44;">
 </p>
 
-<h1 align="center" style="color:#2546ff;font-size:2.8rem;font-weight:800;letter-spacing:2px;">Salary Scope: A Data Scientist Salary Predictor</h1>
+<h1 align="center" style="color:#2546ff;font-size:2.8rem;font-weight:800;letter-spacing:2px;">Salary Scope</h1>
 
 <p align="center" style="color:#5fa8f6;font-size:1.2rem;font-weight:500;">
-  <strong>Predict your salary with confidence using AI-powered insights.</strong>
+  <strong>AI-powered, mobile-optimized salary prediction app with a modern, glowing UI.</strong>
 </p>
 
 <p align="center">
-  <a href="https://salary-scope-spycychief.streamlit.app/" style="font-size:1.1rem;font-weight:600;color:#2546ff;">🌐 Live Demo: salary-scope-spycychief.streamlit.app</a>
+  <a href="https://salary-scope-spycychief.streamlit.app/" style="font-size:1.1rem;font-weight:600;color:#2546ff;">
+    🌐 Live Demo: salary-scope-spycychief.streamlit.app
+  </a>
 </p>
 
 ---
 
-## <span style="color:#2546ff;">✨ Features</span>
-- <span style="color:#5fa8f6;">Accurate Predictions:</span> Utilizes a Gradient Boosting Regressor model with <strong style="color:#2546ff;">R² = 0.89 (89%)</strong> accuracy.
-- <span style="color:#5fa8f6;">Interactive Web Interface:</span> User-friendly form to input your details and get instant salary predictions.
-- <span style="color:#5fa8f6;">Data-Driven Insights:</span> Helps professionals and employers understand salary benchmarks in the industry.
-- <span style="color:#5fa8f6;">Easy Deployment:</span> Optimized for Streamlit Cloud platform.
+## ✨ Features
+- **Modern, Responsive UI:** Beautiful dark theme, glowing blue accents, and perfect alignment on all devices (desktop, tablet, mobile).
+- **Custom Header:** Logo, app name, and social icons (GitHub, LinkedIn, Twitter, Discord) with real links.
+- **Glowing Accuracy Badge:** Eye-catching, pill-shaped badge with a checkmark and blue gradient.
+- **Interactive Form:** User-friendly, grouped fields for salary prediction.
+- **AI-Powered:** Uses a Gradient Boosting Regressor model with **R² = 0.89 (89%)** accuracy.
+- **Easy Deployment:** Optimized for Streamlit Community Cloud.
 
 ---
 
-## <span style="color:#2546ff;">🛠️ Tech Stack & Tools</span>
-- <span style="color:#5fa8f6;">Frontend & Backend:</span> Python, Streamlit
-- <span style="color:#5fa8f6;">Machine Learning:</span> scikit-learn, pandas, numpy
-- <span style="color:#5fa8f6;">Model:</span> Gradient Boosting Regressor
-- <span style="color:#5fa8f6;">Deployment:</span> Streamlit Cloud
+## 🖼️ Screenshots
+<p align="center">
+  <img src="assets/banner.jpg.jpg" alt="App Screenshot" style="width:100%;max-width:900px;border-radius:16px;box-shadow:0 4px 24px #2546ff44;">
+</p>
 
 ---
 
-## <span style="color:#2546ff;">🚀 Getting Started (Local Development)</span>
+## 🛠️ Tech Stack & Tools
+- **Frontend & Backend:** Python, Streamlit
+- **Machine Learning:** scikit-learn, pandas, numpy
+- **Model:** Gradient Boosting Regressor
+- **Deployment:** Streamlit Community Cloud
+
+---
+
+## 🚀 Getting Started (Local Development)
 
 ```sh
 # 1. Clone the repository
@@ -57,28 +68,26 @@ The app will be available at [http://localhost:8501](http://localhost:8501)
 
 ---
 
-## <span style="color:#2546ff;">☁️ Deploying on Streamlit Cloud</span>
+## ☁️ Deploying on Streamlit Community Cloud
 
-1. <span style="color:#5fa8f6;">Push your code to GitHub.</span>
-2. <span style="color:#5fa8f6;">Go to <a href="https://streamlit.io/cloud" style="color:#2546ff;">Streamlit Cloud</a> and sign in.</span>
-3. <span style="color:#5fa8f6;">Click "New app" and connect your GitHub repo.</span>
-4. <span style="color:#5fa8f6;">Set the main file to <code>app_streamlit.py</code>.</span>
-5. <span style="color:#5fa8f6;">Deploy!</span>
+1. **Push your code to GitHub.**
+2. **Go to [Streamlit Cloud](https://streamlit.io/cloud) and sign in.**
+3. **Click "New app" and connect your GitHub repo.**
+4. **Set the main file to `app_streamlit.py`.**
+5. **Deploy!**
    - Streamlit Cloud will build and start your app.
    - Visit your Streamlit Cloud URL to use Salary Scope.
-   - <strong>Live App:</strong> <a href="https://salary-scope-spycychief.streamlit.app/">https://salary-scope-spycychief.streamlit.app/</a>
+   - **Live App:** [https://salary-scope-spycychief.streamlit.app/](https://salary-scope-spycychief.streamlit.app/)
 
 ---
 
-## <span style="color:#2546ff;">📈 Model Performance</span>
-
-- <span style="color:#5fa8f6;">Model:</span> Gradient Boosting Regressor
-- <span style="color:#5fa8f6;font-weight:bold;">Accuracy Score (R²):</span> <strong style="color:#2546ff;font-size:1.3em;">89%</strong>
+## 📊 Model Performance
+- **Model:** Gradient Boosting Regressor
+- **Accuracy Score (R²):** **89%**
 
 ---
 
-## <span style="color:#2546ff;">📁 Project Structure</span>
-
+## 📁 Project Structure
 ```text
 Salary-scope/
   app_streamlit.py
@@ -89,17 +98,19 @@ Salary-scope/
   static/
   assets/
   README.md
-  indian_salary_data_500.csv
 ```
 
 ---
 
-## <span style="color:#2546ff;">🤝 Contributing</span>
-
-Contributions are welcome! Please fork the repo and submit a pull request.
+## 🌐 Social & Credits
+- **GitHub:** [SpicychieF05](https://github.com/SpicychieF05)
+- **LinkedIn:** [Chirantan Mallick](https://www.linkedin.com/in/chirantan-mallick)
+- **Twitter (X):** [@Chirantan2965](https://x.com/Chirantan2965)
+- **Discord:** [Join Server](https://discord.gg/mc2jRBuV)
+- **Developer:** [Chirantan Mallick](https://linktr.ee/chirantan_mallick)
 
 ---
 
-## <span style="color:#2546ff;">📄 License</span>
+## 📄 License
 
-Distributed under the MIT License.
+Distributed under the MIT License. See [LICENSE](LICENSE) for details.
