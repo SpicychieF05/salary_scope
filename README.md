@@ -3,6 +3,13 @@
   <img src="assets/banner.jpg.jpg" alt="Salary Scope Banner" style="width:100%;max-width:900px;border-radius:16px;box-shadow:0 4px 24px #2546ff44;">
 </p>
 
+<!-- QR Code for Live App -->
+<p align="center">
+  <img src="assets/website-qr.png" alt="Live App QR Code" style="width:160px;max-width:30vw;border-radius:18px;box-shadow:0 2px 16px #2546ff55;padding:10px;background:#18191c;">
+  <br>
+  <span style="color:#5fa8f6;font-size:1.08rem;font-weight:600;">Scan to visit the live app</span>
+</p>
+
 <h1 align="center" style="color:#2546ff;font-size:2.8rem;font-weight:800;letter-spacing:2px;">Salary Scope</h1>
 
 <p align="center" style="color:#5fa8f6;font-size:1.2rem;font-weight:500;">
