@@ -18,7 +18,7 @@
 
 <p align="center">
   <a href="https://salary-scope-spycychief.streamlit.app/" style="font-size:1.1rem;font-weight:600;color:#2546ff;">
-    🌐 Live Demo: salary-scope-spycychief.streamlit.app
+    🌐 Live Demo: https://salary-scope-spicychief.streamlit.app/
   </a>
 </p>
 
