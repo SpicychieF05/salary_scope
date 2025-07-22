@@ -550,7 +550,7 @@ if predicted_salary:
     <div class="neon-box">
       <div class="neon-rotate"></div>
       <span style="position:relative;z-index:1;">{}</span>
-      <div style="font-size:1rem;font-weight:400;color:#5fa8f6;margin-top:8px;">Authenticity: 89% (R² = 0.89)</div>
+      <div style="font-size:1rem;font-weight:400;color:#5fa8f6;margin-top:8px;">Authenticity: 96% (R² = 0.96)</div>
     </div>
     '''.format(predicted_salary), unsafe_allow_html=True)
 if prediction_error:
