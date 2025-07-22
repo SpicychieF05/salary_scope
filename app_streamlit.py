@@ -3,7 +3,7 @@ import joblib
 import pandas as pd
 import os
 
-# --- Custom CSS for dark mode and layout ---
+# --- CSS for dark mode and layout ---
 st.markdown('''
     <style>
     @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
@@ -381,8 +381,8 @@ st.markdown('''
 </style>
 ''', unsafe_allow_html=True)
 
-# --- Form Card ---
-st.markdown('<div class="form-card">', unsafe_allow_html=True)
+# # --- Form Card ---
+# st.markdown('<div class="form-card">', unsafe_allow_html=True)
 
 # Dropdown options
 job_titles = sorted([
