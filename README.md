@@ -35,16 +35,31 @@
 
 ---
 
-## 🖼️ Screenshots
-<p align="center">
-  <img src="assets\default.png" alt="App Banner Screenshot" style="width:100%;max-width:900px;border-radius:16px;box-shadow:0 4px 24px #2546ff44;margin-bottom:20px;">
-</p>
+// ...existing code...
 
-<p align="center">
-  <img src="assets/output.png" alt="App QR Code" style="width:200px;border-radius:18px;box-shadow:0 4px 24px #2546ff44;padding:10px;background:#18191c;">
-</p>
+## 🖼️ Screenshots
+
+<div align="center">
+  <!-- Default View -->
+  <div style="margin-bottom:30px;">
+    <img src="assets/default.png" alt="Default App View" style="width:100%;max-width:900px;border-radius:16px;box-shadow:0 4px 24px #2546ff44;">
+    <p style="color:#5fa8f6;font-size:1.1rem;margin-top:10px;">
+      Default view of the app showing the prediction form with input fields and custom styling
+    </p>
+  </div>
+
+  <!-- Output View -->
+  <div style="margin-bottom:30px;">
+    <img src="assets/output.png" alt="Prediction Output" style="width:100%;max-width:900px;border-radius:16px;box-shadow:0 4px 24px #2546ff44;">
+    <p style="color:#5fa8f6;font-size:1.1rem;margin-top:10px;">
+      Results view showing the predicted salary based on user inputs with confidence score
+    </p>
+  </div>
+</div>
 
 ---
+
+// ...existing code...
 
 
 ## 🛠️ Tech Stack & Tools
