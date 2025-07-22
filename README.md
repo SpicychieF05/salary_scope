@@ -36,11 +36,17 @@
 ---
 
 ## 🖼️ Screenshots
+## 🖼️ Screenshots
 <p align="center">
-  <img src="assets/banner.jpg.jpg" alt="App Screenshot" style="width:100%;max-width:900px;border-radius:16px;box-shadow:0 4px 24px #2546ff44;">
+  <img src="assets/banner.jpg.jpg" alt="App Banner Screenshot" style="width:100%;max-width:900px;border-radius:16px;box-shadow:0 4px 24px #2546ff44;margin-bottom:20px;">
+</p>
+
+<p align="center">
+  <img src="assets/website-qr.png" alt="App QR Code" style="width:200px;border-radius:18px;box-shadow:0 4px 24px #2546ff44;padding:10px;background:#18191c;">
 </p>
 
 ---
+
 
 ## 🛠️ Tech Stack & Tools
 - **Frontend & Backend:** Python, Streamlit
