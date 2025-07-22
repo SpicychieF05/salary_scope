@@ -37,11 +37,11 @@
 
 ## 🖼️ Screenshots
 <p align="center">
-  <img src="assets\project-default.png" alt="App Banner Screenshot" style="width:100%;max-width:900px;border-radius:16px;box-shadow:0 4px 24px #2546ff44;margin-bottom:20px;">
+  <img src="assets\default.png" alt="App Banner Screenshot" style="width:100%;max-width:900px;border-radius:16px;box-shadow:0 4px 24px #2546ff44;margin-bottom:20px;">
 </p>
 
 <p align="center">
-  <img src="assets/project-output.png" alt="App QR Code" style="width:200px;border-radius:18px;box-shadow:0 4px 24px #2546ff44;padding:10px;background:#18191c;">
+  <img src="assets/output.png" alt="App QR Code" style="width:200px;border-radius:18px;box-shadow:0 4px 24px #2546ff44;padding:10px;background:#18191c;">
 </p>
 
 ---
