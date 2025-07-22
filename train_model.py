@@ -15,15 +15,16 @@ print("\n=== Starting model training process ===\n")
 
 # --- 1. Load Data ---
 try:
-    df = pd.read_csv('indian_salary_data_500.csv')
-    print("Dataset loaded successfully.")
+    df = pd.read_csv('salary-dataset-5000.csv')
+    print("Dataset loaded successfully with", len(df), "records.")
 except FileNotFoundError:
-    print("Error: 'indian_salary_data_500.csv' not found.")
+    print("Error: 'salary-dataset-5000.csv' not found.")
     sys.exit()
 
 # --- 2. Data Preparation ---
 df.columns = df.columns.str.strip()
 print("Column names cleaned.")
+
 
 def simplify_education(edu_string):
     s = str(edu_string).lower()
@@ -38,6 +39,7 @@ def simplify_education(edu_string):
     else:
         return '10th'
 
+
 if 'education' in df.columns:
     df['education'] = df['education'].apply(simplify_education)
 
@@ -46,21 +48,27 @@ CATEGORICAL_FEATURES = [
     'gender', 'education', 'job_title', 'job_location', 'city', 'nationality', 'marital_status'
 ]
 NUMERICAL_FEATURES = [
-    'age', 'years_of_experience', 'education_num', 'hours_per_week'
+    'age', 'years_of_experience', 'education_num', 'hours_per_week',
+    'experience_education', 'hours_experience'
 ]
 
-if 'marital_status' not in df.columns:
-    df['marital_status'] = 'Married'
-if 'education_num' not in df.columns:
-    edu_map = {'PhD': 20, 'Masters': 18, 'Bachelors': 16, '12th': 12, '10th': 10}
-    df['education_num'] = df['education'].map(edu_map).fillna(10)
-if 'hours_per_week' not in df.columns:
-    df['hours_per_week'] = 45
+# Convert education to numerical value for better correlation
+edu_map = {'PhD': 20, 'Masters': 18, 'Bachelors': 16, '12th': 12, '10th': 10}
+df['education_num'] = df['education'].map(edu_map).fillna(10)
+
+# Handle any missing values
+df['hours_per_week'].fillna(df['hours_per_week'].median(), inplace=True)
+df['marital_status'].fillna(df['marital_status'].mode()[0], inplace=True)
+
+# Feature engineering: Create interaction features
+df['experience_education'] = df['years_of_experience'] * df['education_num']
+df['hours_experience'] = df['hours_per_week'] * df['years_of_experience']
 
 required_cols = CATEGORICAL_FEATURES + NUMERICAL_FEATURES + [TARGET_COL]
 for col in required_cols:
     if col not in df.columns:
-        print(f"FATAL ERROR: Required column '{col}' not found in the dataset!")
+        print(
+            f"FATAL ERROR: Required column '{col}' not found in the dataset!")
         sys.exit()
 df = df[required_cols]
 
@@ -73,15 +81,24 @@ print(f"Features for training: {X.columns.tolist()}")
 preprocessor = ColumnTransformer(
     transformers=[
         ('num', StandardScaler(), NUMERICAL_FEATURES),
-        ('cat', OneHotEncoder(handle_unknown='ignore', sparse_output=False), CATEGORICAL_FEATURES)
+        ('cat', OneHotEncoder(handle_unknown='ignore',
+         sparse_output=False), CATEGORICAL_FEATURES)
     ],
     remainder='passthrough'
 )
 
 model_pipeline = Pipeline(steps=[
     ('preprocessor', preprocessor),
-    ('regressor', GradientBoostingRegressor(n_estimators=300,
-     learning_rate=0.1, max_depth=5, random_state=42, subsample=0.8))
+    ('regressor', GradientBoostingRegressor(
+        n_estimators=500,
+        learning_rate=0.05,
+        max_depth=6,
+        min_samples_split=5,
+        min_samples_leaf=4,
+        max_features='sqrt',
+        subsample=0.8,
+        random_state=42
+    ))
 ])
 
 # --- 4. Train the Model ---
