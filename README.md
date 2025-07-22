@@ -30,7 +30,7 @@
 - **Custom Header:** Logo, app name, and social icons (GitHub, LinkedIn, Twitter, Discord) with real links.
 - **Glowing Accuracy Badge:** Eye-catching, pill-shaped badge with a checkmark and blue gradient.
 - **Interactive Form:** User-friendly, grouped fields for salary prediction.
-- **AI-Powered:** Uses a Gradient Boosting Regressor model with **R² = 0.89 (89%)** accuracy.
+- **AI-Powered:** Uses a Gradient Boosting Regressor model with **R² = 0.96 (96%)** accuracy.
 - **Easy Deployment:** Optimized for Streamlit Community Cloud.
 
 ---
@@ -107,7 +107,7 @@ The app will be available at [http://localhost:8501](http://localhost:8501)
 
 ## 📊 Model Performance
 - **Model:** Gradient Boosting Regressor
-- **Accuracy Score (R²):** **89%**
+- **Accuracy Score (R²):** **96%**
 
 ---
 
