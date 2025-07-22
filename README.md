@@ -54,7 +54,7 @@
 
 ```sh
 # 1. Clone the repository
-   git clone <your-repo-url>
+   git clone <https://github.com/SpicychieF05/salary_scope>
    cd Salary-scope
 
 # 2. Create a virtual environment
