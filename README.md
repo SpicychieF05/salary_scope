@@ -35,8 +35,6 @@
 
 ---
 
-// ...existing code...
-
 ## 🖼️ Screenshots
 
 <div align="center">
@@ -58,8 +56,6 @@
 </div>
 
 ---
-
-// ...existing code...
 
 
 ## 🛠️ Tech Stack & Tools
