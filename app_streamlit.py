@@ -294,7 +294,7 @@ st.markdown('''
   </div>
   <div class="accuracy-pill">
     <span class="accuracy-icon">✔️</span>
-    <span class="accuracy-text"><b>Accuracy: 89% (R² = 0.89)</b></span>
+    <span class="accuracy-text"><b>Accuracy: 96% (R² = 0.96)</b></span>
   </div>
 </div>
 ''', unsafe_allow_html=True)
@@ -398,21 +398,21 @@ with st.form("salary_form"):
     with col1:
         age = st.text_input("Age", placeholder="e.g., 35")
     with col2:
-        gender = st.selectbox("Gender", ["Male", "Female", "Other"], index=0)
+        gender = st.selectbox("Gender", ["Select", "Male", "Female", "Other"])
     with col3:
         marital_status = st.selectbox(
-            "Marital Status", ["Single", "Married", "Divorced", "Widowed"], index=1)
+            "Marital Status", ["Select", "Single", "Married", "Divorced", "Widowed"])
     col4, col5 = st.columns(2)
     with col4:
-        job_title = st.selectbox("Job Title", job_titles, index=job_titles.index(
-            "Software Developer") if "Software Developer" in job_titles else 0)
+        job_titles_with_select = ["Select"] + job_titles
+        job_title = st.selectbox("Job Title", job_titles_with_select)
     with col5:
         years_of_experience = st.text_input(
             "Years of Experience", placeholder="e.g., 5")
     col6, col7, col8 = st.columns(3)
     with col6:
         education = st.selectbox("Highest Education", [
-                                 "PhD", "Masters", "Bachelors", "12th", "10th"], index=0)
+                                 "Select", "PhD", "Masters", "Bachelors", "12th", "10th"])
     with col7:
         education_num = st.text_input(
             "Education (Numeric)", placeholder="e.g., 15 for Bachelors")
@@ -423,10 +423,11 @@ with st.form("salary_form"):
     with col9:
         city = st.text_input("City", placeholder="e.g., Mumbai")
     with col10:
-        location = st.selectbox("Location Type", locations, index=2)
+        locations_with_select = ["Select"] + locations
+        location = st.selectbox("Location Type", locations_with_select)
     with col11:
-        nationality = st.selectbox("Nationality", nationalities, index=nationalities.index(
-            "Indian") if "Indian" in nationalities else 0)
+        nationalities_with_select = ["Select"] + nationalities
+        nationality = st.selectbox("Nationality", nationalities_with_select)
     st.markdown("<br>", unsafe_allow_html=True)
     colA, colB, colC = st.columns([1, 1, 1])
     with colA:
