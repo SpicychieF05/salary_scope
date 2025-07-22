@@ -219,7 +219,8 @@ header_cols = st.columns([0.1, 0.6, 0.3])
 with header_cols[0]:
     st.image('static/app-logo.png', width=54)
 with header_cols[1]:
-    st.markdown('<span class="app-title"><span>Salary</span> Scope</span>', unsafe_allow_html=True)
+    st.markdown('<span class="app-title"><span>Salary</span> Scope</span>',
+                unsafe_allow_html=True)
 with header_cols[2]:
     st.markdown('''
     <div class="header-icons">
@@ -293,7 +294,7 @@ st.markdown('''
   </div>
   <div class="accuracy-pill">
     <span class="accuracy-icon">✔️</span>
-    <span class="accuracy-text"><b>Accuracy: 89% (R² = 0.89)</b></span>
+    <span class="accuracy-text"><b>Accuracy: 96% (R² = 0.96)</b></span>
   </div>
 </div>
 ''', unsafe_allow_html=True)
@@ -389,7 +390,8 @@ job_titles = sorted([
     'Actuary', 'Agile Coach', 'AI Engineer', 'Assistant Engineer (AE)', 'Assistant Section Officer', 'Auditor', 'Automation Tester', 'Backend Developer', 'Bank Clerk', 'Bank Probationary Officer (PO)', 'Bank Specialist Officer (SO)', 'Big Data Engineer', 'Block Development Officer (BDO)', 'Blockchain Developer', 'Business Analyst', 'Business Intelligence Developer', 'Chartered Accountant (CA)', 'Chief Technology Officer (CTO)', 'Cloud Architect', 'Cloud Engineer', 'Cloud Security Engineer', 'Company Secretary (CS)', 'Content Strategist', 'Cost Accountant (CMA)', 'CRM Specialist (Salesforce)', 'Credit Analyst', 'Customs Officer', 'Cybersecurity Analyst', 'Data Analyst', 'Data Engineer', 'Data Scientist', 'Database Administrator (DBA)', 'Deep Learning Engineer', 'DevOps Engineer', 'Digital Marketing Analyst', 'District Magistrate', 'Embedded Systems Engineer', 'ERP Consultant (SAP/Oracle)', 'Excise Officer', 'Financial Analyst', 'Financial Planner', 'Frontend Developer', 'Full Stack Developer', 'Game Developer', 'Graphic Designer', 'IAS Officer', 'IFS Officer', 'Income Tax Inspector', 'Indian Railways Officer (RRB Group A/B)', 'Information Security Officer', 'Insurance Advisor (GIC/NIC)', 'IoT Engineer', 'IPS Officer', 'IRS Officer', 'IT Consultant', 'IT Project Manager', 'IT Support Specialist', 'Junior Engineer (JE)', 'LDC (Lower Division Clerk)', 'LIC AAO', 'LIC ADO', 'Loan Officer', 'Machine Learning Engineer', 'Mobile App Developer', 'Mutual Fund Advisor', 'NABARD Grade A/B Officer', 'NLP Engineer', 'Network Administrator', 'Network Engineer', 'Portfolio Manager', 'Power BI Developer', 'Product Manager', 'PSU Engineer (ONGC, NTPC, BHEL)', 'QA/Test Engineer', 'Railway Protection Force (RPF) Officer', 'RBI Assistant', 'RBI Grade B Officer', 'Research Officer (CSIR/ICAR)', 'Risk Analyst', 'Scrum Master', 'SEBI Grade A Officer', 'SEO Specialist', 'Social Media Manager', 'Software Architect', 'Software Developer', 'SSC CGL Officer', 'State PCS Officer', 'Stock Broker', 'System Administrator', 'Tax Consultant', 'Technical Support Engineer', 'Tehsildar', 'Treasury Manager', 'UI/UX Designer', 'UDC (Upper Division Clerk)', 'Wealth Manager', 'Web Designer'
 ])
 locations = ['Rural', 'Suburban', 'Urban']
-nationalities = sorted(['American', 'Australian', 'Brazilian', 'British', 'Canadian', 'Chinese', 'French', 'German', 'Indian', 'Japanese', 'Russian', 'South African'])
+nationalities = sorted(['American', 'Australian', 'Brazilian', 'British', 'Canadian',
+                       'Chinese', 'French', 'German', 'Indian', 'Japanese', 'Russian', 'South African'])
 
 with st.form("salary_form"):
     col1, col2, col3 = st.columns(3)
@@ -398,28 +400,35 @@ with st.form("salary_form"):
     with col2:
         gender = st.selectbox("Gender", ["Male", "Female", "Other"], index=0)
     with col3:
-        marital_status = st.selectbox("Marital Status", ["Single", "Married", "Divorced", "Widowed"], index=1)
+        marital_status = st.selectbox(
+            "Marital Status", ["Single", "Married", "Divorced", "Widowed"], index=1)
     col4, col5 = st.columns(2)
     with col4:
-        job_title = st.selectbox("Job Title", job_titles, index=job_titles.index("Software Developer") if "Software Developer" in job_titles else 0)
+        job_title = st.selectbox("Job Title", job_titles, index=job_titles.index(
+            "Software Developer") if "Software Developer" in job_titles else 0)
     with col5:
-        years_of_experience = st.text_input("Years of Experience", placeholder="e.g., 5")
+        years_of_experience = st.text_input(
+            "Years of Experience", placeholder="e.g., 5")
     col6, col7, col8 = st.columns(3)
     with col6:
-        education = st.selectbox("Highest Education", ["PhD", "Masters", "Bachelors", "12th", "10th"], index=0)
+        education = st.selectbox("Highest Education", [
+                                 "PhD", "Masters", "Bachelors", "12th", "10th"], index=0)
     with col7:
-        education_num = st.text_input("Education (Numeric)", placeholder="e.g., 15 for Bachelors")
+        education_num = st.text_input(
+            "Education (Numeric)", placeholder="e.g., 15 for Bachelors")
     with col8:
-        hours_per_week = st.text_input("Hours per Week", placeholder="e.g., 45")
+        hours_per_week = st.text_input(
+            "Hours per Week", placeholder="e.g., 45")
     col9, col10, col11 = st.columns(3)
     with col9:
         city = st.text_input("City", placeholder="e.g., Mumbai")
     with col10:
         location = st.selectbox("Location Type", locations, index=2)
     with col11:
-        nationality = st.selectbox("Nationality", nationalities, index=nationalities.index("Indian") if "Indian" in nationalities else 0)
+        nationality = st.selectbox("Nationality", nationalities, index=nationalities.index(
+            "Indian") if "Indian" in nationalities else 0)
     st.markdown("<br>", unsafe_allow_html=True)
-    colA, colB, colC = st.columns([1,1,1])
+    colA, colB, colC = st.columns([1, 1, 1])
     with colA:
         predict_btn = st.form_submit_button("🧑‍💼 Predict Salary")
     with colB:
@@ -443,19 +452,21 @@ st.markdown('''
 ''', unsafe_allow_html=True)
 
 # --- Model and Prediction Logic ---
-import joblib
 model = joblib.load('model.joblib')
 label_encoder = joblib.load('label_encoder.joblib')
 
+
 def is_valid(val):
     return val not in (None, "", "Select")
+
 
 predicted_salary = None
 prediction_error = None
 if 'predict_btn' in locals() and predict_btn:
     if not all([
         is_valid(age), is_valid(gender), is_valid(marital_status),
-        is_valid(job_title), is_valid(years_of_experience), is_valid(education),
+        is_valid(job_title), is_valid(
+            years_of_experience), is_valid(education),
         is_valid(education_num), is_valid(hours_per_week), is_valid(city),
         is_valid(location), is_valid(nationality)
     ]):
