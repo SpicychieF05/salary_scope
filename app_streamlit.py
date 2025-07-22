@@ -294,7 +294,7 @@ st.markdown('''
   </div>
   <div class="accuracy-pill">
     <span class="accuracy-icon">✔️</span>
-    <span class="accuracy-text"><b>Accuracy: 96% (R² = 0.96)</b></span>
+    <span class="accuracy-text"><b>Accuracy: 89% (R² = 0.89)</b></span>
   </div>
 </div>
 ''', unsafe_allow_html=True)
@@ -473,6 +473,7 @@ if 'predict_btn' in locals() and predict_btn:
         st.error("Please fill in all fields.")
     else:
         try:
+            # Create initial dataframe
             input_df = pd.DataFrame([{
                 "gender": gender,
                 "education": education,
@@ -486,6 +487,12 @@ if 'predict_btn' in locals() and predict_btn:
                 "education_num": int(education_num),
                 "hours_per_week": int(hours_per_week)
             }])
+
+            # Add engineered features
+            input_df['experience_education'] = input_df['years_of_experience'] * \
+                input_df['education_num']
+            input_df['hours_experience'] = input_df['hours_per_week'] * \
+                input_df['years_of_experience']
             prediction = model.predict(input_df)
             predicted_salary = f"Predicted Salary: ₹{prediction[0]:,.0f} lakhs"
         except Exception as e:
