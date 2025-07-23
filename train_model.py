@@ -1,6 +1,3 @@
-# train_model.py (Final UI Version)
-# This script is adapted for the final UI layout and dataset.
-
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.compose import ColumnTransformer
