@@ -283,6 +283,13 @@ st.markdown('''
     font-size: 1.3rem;
   }
 }
+@keyframes fa-bounce {
+  0%, 100% { transform: translateY(0); }
+  20% { transform: translateY(-8px); }
+  40% { transform: translateY(-16px); }
+  60% { transform: translateY(-8px); }
+  80% { transform: translateY(0); }
+}
 </style>
 ''', unsafe_allow_html=True)
 
