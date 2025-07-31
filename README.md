@@ -3,13 +3,6 @@
   <img src="assets/banner.jpg.jpg" alt="Salary Scope Banner" style="width:100%;max-width:900px;border-radius:16px;box-shadow:0 4px 24px #2546ff44;">
 </p>
 
-<!-- QR Code for Live App -->
-<p align="center">
-  <img src="assets/website-qr.png" alt="Live App QR Code" style="width:160px;max-width:30vw;border-radius:18px;box-shadow:0 2px 16px #2546ff55;padding:10px;background:#18191c;">
-  <br>
-  <span style="color:#5fa8f6;font-size:1.08rem;font-weight:600;">Scan to visit the live app</span>
-</p>
-
 <h1 align="center" style="color:#2546ff;font-size:2.8rem;font-weight:800;letter-spacing:2px;">Salary Scope</h1>
 
 <p align="center" style="color:#5fa8f6;font-size:1.2rem;font-weight:500;">
@@ -18,8 +11,8 @@
 
 <div align="center">
   <h3>🌐 Live Demo</h3>
-  <a href="http://salary-scope-spicychief.streamlit.app//" style="font-size:1.1rem;font-weight:600;color:#2546ff;">
-    Salary-scope-spicychief.streamlit.app
+  <a href="https://salaryscope.streamlit.app/" style="font-size:1.1rem;font-weight:600;color:#2546ff;">
+    SalaryScope.streamlit.app
   </a>
 </div>
 
@@ -100,7 +93,7 @@ The app will be available at [http://localhost:8501](http://localhost:8501)
 5. **Deploy!**
    - Streamlit Cloud will build and start your app.
    - Visit your Streamlit Cloud URL to use Salary Scope.
-   - **Live App:** [Salary-Scope-Spycychief.streamlit.app](http://salary-scope-spicychief.streamlit.app/)
+   - **Live App:** [SalaryScope.streamlit.app](https://salaryscope.streamlit.app/)
 
 ---
 
